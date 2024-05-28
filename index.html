@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini API Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Gemini API Demo</h1>
+    <textarea id="prompt" placeholder="Enter your text prompt here..."></textarea>
+    <input type="file" id="image-input" multiple>
+    <button id="generate-btn">Generate Text</button>
+    <div id="result"></div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
