@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gemini API</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <script type="importmap">
     {
       "imports": {
@@ -15,11 +15,22 @@
 </head>
 <body>
   <div class="container">
-    <h1>Gemini API Demo</h1>
-    <div id="chat-history"></div>
-    <textarea id="prompt" placeholder="Enter your text prompt here..."></textarea>
-    <input type="file" id="image-input" multiple>
-    <button id="generate-btn">Generate Text</button>
+    <header class="header">
+      <h1>Gemini API Demo</h1>
+    </header>
+    <div class="main-content">
+      <aside class="sidebar">
+        <!-- Add sidebar content or options here -->
+      </aside>
+      <div class="chat-section">
+        <div id="chat-history" class="chat-history"></div>
+        <div class="input-section">
+          <textarea id="prompt" placeholder="Enter your text prompt here..."></textarea>
+          <input type="file" id="image-input" multiple>
+          <button id="generate-btn">Send</button>
+        </div>
+      </div>
+    </div>
   </div>
   <script type="module" src="main.js"></script>
 </body>
