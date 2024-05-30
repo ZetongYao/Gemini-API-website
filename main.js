@@ -18,6 +18,8 @@ async function fileToGenerativePart(file) {
   };
 }
 
+let chatHistory = [];
+
 document.getElementById("generate-btn").addEventListener("click", async () => {
   const prompt = document.getElementById("prompt").value;
   const fileInputEl = document.getElementById("image-input");
@@ -36,5 +38,16 @@ document.getElementById("generate-btn").addEventListener("click", async () => {
   const response = await result.response;
   const text = await response.text();
 
-  document.getElementById("result").innerText = text;
+  chatHistory.push({ prompt, response: text });
+  updateChatHistory();
 });
+
+function updateChatHistory() {
+  const chatHistoryDiv = document.getElementById("chat-history");
+  chatHistoryDiv.innerHTML = chatHistory.map(chat => `
+    <div class="chat-entry">
+      <div class="user-prompt"><strong>You:</strong> ${chat.prompt}</div>
+      <div class="api-response"><strong>Gemini:</strong> ${chat.response}</div>
+    </div>
+  `).join('');
+}
